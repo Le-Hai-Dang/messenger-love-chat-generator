@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biến kịch bản Nam/Nữ thành PNG Messenger Love, hoàn toàn trên máy của bạn.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ed165e'/%3E%3Cpath d='M32 47 15 31C3 16 24 8 32 23 40 8 61 16 49 31Z' fill='white'/%3E%3C/svg%3E">
+  <title>Messenger Love Chat Generator</title>
+  <script type="module" crossorigin src="./assets/index-Drv5X97j.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-LXQUEmY3.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon" aria-hidden="true">♡</span><span>LOVE<span class="brand-light"> / STUDIO</span></span></a>
+    <div class="topbar-right"><span class="local-badge"><i></i> Chạy trên máy của bạn</span><span id="save-state" role="status">Đang mở bản nháp…</span></div>
+  </header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">TỪ KỊCH BẢN ĐẾN KHUNG CHAT</p><h1>Messenger Love<br><span> Chat Generator</span><span class="title-dot">.</span></h1><p class="intro-copy">Một câu chuyện. Từng tin nhắn. Sẵn sàng cho video tiếp theo.</p></div><div class="intro-stamp"><span>♡</span> WALLPAPER GỐC META <b>PNG · 1× / 2× · DOWNLOADS</b></div></div>
+    <div class="workspace">
+      <section class="editor-column" aria-label="Soạn kịch bản và cấu hình">
+        <div class="panel script-panel">
+          <div class="section-title"><span class="step">01</span><h2>Kịch bản của bạn</h2><span id="script-count" class="count-pill">4 tin</span></div>
+          <p class="muted">Mỗi tin bắt đầu bằng <code>Nam:</code> hoặc <code>Nữ:</code>. Xuống dòng để viết tiếp cùng một tin.</p>
+          <div class="sample-toolbar"><span>THỬ KỊCH BẢN MẪU</span><button id="sample-four" class="text-button" type="button">4 tin</button><button id="sample-eleven" class="text-button" type="button">11 tin</button></div>
+          <label class="sr-only" for="script">Kịch bản hội thoại</label>
+          <textarea id="script" spellcheck="false" placeholder="Nữ: Em có chuyện muốn nói…&#10;Nam: Anh đang nghe nè" aria-describedby="script-help"></textarea>
+          <div id="script-help" class="editor-note"><span>Giữ nguyên lời thoại, dấu câu & emoji.</span><kbd>⌘ Enter</kbd></div>
+          <button id="generate" type="button" class="primary wide"><span aria-hidden="true">✦</span> Generate <span class="button-end" aria-hidden="true">↗</span></button>
+        </div>
+        <div class="panel avatar-panel">
+          <div class="section-title"><span class="step">02</span><h2>Nhân vật & khung ảnh</h2></div>
+          <div class="avatar-row"><img id="avatar-preview" alt="Avatar nhân vật Nữ" src="./assets/avatar-female.jpg"><div class="avatar-info"><strong>Avatar Nữ</strong><span id="avatar-description">Mèo tai thỏ · ảnh mặc định của bạn</span><button id="avatar-default" class="text-button" type="button">Dùng ảnh mặc định</button></div><label class="upload-button">Đổi ảnh<input id="avatar-upload" aria-label="Upload avatar Nữ" type="file" accept="image/png,image/jpeg,image/webp,image/avif"></label></div>
+          <div id="basic-settings" class="field-grid"></div>
+          <details id="appearance-details"><summary><span>Chữ & bong bóng</span><span aria-hidden="true">+</span></summary><div id="type-settings" class="field-grid detail-fields"></div><div id="bubble-settings" class="field-grid detail-fields"></div></details>
+          <details id="background-details"><summary><span>Viewport & vùng cắt</span><span aria-hidden="true">+</span></summary><p class="muted">Nền cố định theo khung chat. Vùng cắt đi theo vị trí của mỗi tin; không xáo trộn hình nền.</p><div id="background-settings" class="field-grid detail-fields"></div><p class="settings-note">Tin vượt chiều cao viewport dùng một khung cao hơn để giữ đủ nội dung. Thông số mặc định đã đo từ ảnh mẫu của bạn.</p></details>
+          <button id="reset" class="reset-button" type="button"><span aria-hidden="true">↺</span> Reset về thông số mẫu Messenger Love</button>
+        </div>
+        <p class="privacy-note"><span aria-hidden="true">⌁</span> Bản nháp, avatar và cấu hình được lưu trong trình duyệt này.</p>
+      </section>
+      <section class="preview-column" aria-label="Ảnh xem trước">
+        <div class="preview-toolbar"><div><div class="section-title"><span class="step">03</span><h2>Bộ ảnh của bạn</h2><span id="frame-count" class="count-pill">0</span></div><p id="preview-summary" class="muted">Mỗi ảnh là một tin nhắn. Preview chính là PNG xuất ra.</p></div><button id="export-all" type="button" class="dark-button" disabled><span aria-hidden="true">↓</span> Xuất vào Downloads</button></div>
+        <div id="notice" class="notice" role="alert" hidden></div>
+        <div id="stale" class="stale-note" hidden>Có thay đổi mới. Nhấn Generate để cập nhật ảnh và bản xuất.</div>
+        <div id="progress-wrap" class="progress-wrap" hidden><div><span id="progress-label" role="status">Đang dựng ảnh…</span><button id="cancel" class="text-button" type="button">Hủy</button></div><progress id="progress" max="100" value="0"></progress></div>
+        <div id="frames" class="frames"><div class="empty-state"><span>♡</span><h3>Câu chuyện bắt đầu ở đây</h3><p>Dán kịch bản bên trái, rồi nhấn Generate.</p></div></div>
+        <div class="preview-footer"><span class="mini-heart">♡</span><p>Wallpaper gốc. Avatar của bạn. Không watermark.</p><span id="output-profile">648 px · 1×</span></div>
+      </section>
+    </div>
+    <footer class="page-footer"><span>LOVE / STUDIO</span><p>Được tạo để kể những câu chuyện nhỏ.</p><span>Chỉ lưu trên máy của bạn.</span></footer>
+  </main>
+  <dialog id="lightbox"><div class="dialog-toolbar"><strong id="lightbox-title">Xem ảnh</strong><button id="close-lightbox" aria-label="Đóng xem ảnh" type="button">×</button></div><div class="lightbox-body"><img id="lightbox-image" alt="PNG tin nhắn kích thước lớn"></div><div class="dialog-footer"><span id="lightbox-meta"></span><button id="lightbox-download" class="primary" type="button">↓ Tải PNG</button></div></dialog>
+</body>
+</html>
